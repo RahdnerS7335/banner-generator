@@ -4,31 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>JQuery Template</title>
-</head>
-
-<body>
 
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
         $(function() {
+            $('buttton').click(function() {
+                var bannerSize = $('input[bannerSize]:checked').val();
+                var yourName = $("#yourName").val();
+                var backgroundColor= $("#bColor").val();
+                $('banner').val(backgroundColor).css('background-color', "")
+                
+            });
+
 
         });
     </script>
     <style>
-
+        div {
+            background-color: white;
+            height: 250px;
+            width: 750px;
+        }
     </style>
+</head>
+
+<body>
+
+
     <form>
         Size Of Banner Desired:<br>
-        <input type="radio" id="640x640"> 640px by 640px<br>
-        <input type="radio" id="1280x800"> 1280px by 800px<br>
-        <input type="radio" value="custom"> Custom Size<br> Text Wanting To Appear:
-        <input type="text" name="Text"> <input type="submit" value="Submit" /><br> Background-Color Wanting To Appear:
-        <input type="color" name="Color" value="#fe6ed2"><br>
+        <input type="radio" name="bannerSize" id="slim"> 640px by 640px<br>
+        <input type="radio" name="bannerSize" id="wide"> 1280px by 800px<br>
+        <input type="radio" name="bannerSize" id="narrow"> 800px by 400px<br> Text Wanting To Appear:
+        <input type="text" name="Text" id="yourName">
+        <br>Background-Color Wanting To Appear:
+        <input type="color" id="bColor" value="#fe6ed2"><br>
+         <button>Click To Print Banner</button>
     </form>
+   
 
-<div>
-    
-</div>
+    <div>
+        <div id ="banner">
+
+    </div>
 </body>
 
 </html>
