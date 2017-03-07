@@ -11,9 +11,12 @@
             $('buttton').click(function() {
                 var bannerSize = $('input[bannerSize]:checked').val();
                 var yourName = $("#yourName").val();
-                var backgroundColor= $("#bColor").val();
-                $('banner').val(backgroundColor).css('background-color', "")
-                
+                var backgroundColor = $("#bColor").val();
+                var border = $('#border').val()
+                $('#banner').css('background-color', bColor);
+                $('#banner').css('border-color', border);
+                $('h1').html("Congradulations " + yourName.toUpperCase()).css("text-align", "center");
+
             });
 
 
@@ -21,9 +24,16 @@
     </script>
     <style>
         div {
-            background-color: white;
+            background-color: black;
             height: 250px;
             width: 750px;
+            border: 2px solid blue;
+        }
+        
+        h1 {
+            font-size: 40px;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
@@ -35,18 +45,19 @@
         Size Of Banner Desired:<br>
         <input type="radio" name="bannerSize" id="slim"> 640px by 640px<br>
         <input type="radio" name="bannerSize" id="wide"> 1280px by 800px<br>
-        <input type="radio" name="bannerSize" id="narrow"> 800px by 400px<br> Text Wanting To Appear:
+        <input type="radio" name="bannerSize" id="narrow"> 800px by 400px<br> Your Name:
         <input type="text" name="Text" id="yourName">
         <br>Background-Color Wanting To Appear:
-        <input type="color" id="bColor" value="#fe6ed2"><br>
-         <button>Click To Print Banner</button>
+        <input type="color" id="bColor" value="#fe6ed2">
+        <br> Border Color: <input type="color" value="#f94269" id="border"><br>
+        <button>Click To Print Banner</button>
     </form>
-   
+
 
     <div>
-        <div id ="banner">
-
-    </div>
+        <div id="banner">
+            <h1> Congradulations</h1>
+        </div>
 </body>
 
 </html>
